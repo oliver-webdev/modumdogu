@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f8ff; /* Light blue background */
+}
+
+h1 {
+    color: #1e90ff; /* Bright blue for the title */
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 15px;
+    max-width: 600px;
+    width: 100%;
+}
+
+.feature-button {
+    padding: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Different colors for each button */
+.button-1 { background-color: #ff6347; }  /* Tomato */
+.button-2 { background-color: #ffa07a; }  /* Light Salmon */
+.button-3 { background-color: #ffd700; }  /* Gold */
+.button-4 { background-color: #32cd32; }  /* Lime Green */
+.button-5 { background-color: #4682b4; }  /* Steel Blue */
+.button-6 { background-color: #9370db; }  /* Medium Purple */
+.button-7 { background-color: #f4a460; }  /* Sandy Brown */
+.button-8 { background-color: #40e0d0; }  /* Turquoise */
+.button-9 { background-color: #ff4500; }  /* Orange Red */
+.button-10 { background-color: #ff69b4; } /* Hot Pink */
+.button-11 { background-color: #6495ed; } /* Cornflower Blue */
+.button-12 { background-color: #8a2be2; } /* Blue Violet */

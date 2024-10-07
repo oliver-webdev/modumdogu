@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f8ff; /* Light blue background */
+}
+
+/* Container for the whole page */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Title styling */
+.title {
+    font-size: 36px;
+    color: #2196F3;
+    margin-top: 20px;
+}
+
+/* BMI Bar container styling */
+.bmi-bar-container {
+    position: relative;
+    width: 100%;
+    margin: 20px auto;
+}
+
+.bmi-bar {
+    height: 30px;
+    background: linear-gradient(to right, #4fc3f7 18.5%, #81c784 43%, #ffb74d 57%, #e57373 100%);
+    border-radius: 15px;
+    position: relative;
+}
+
+#bmiIndicator {
+    width: 10px;
+    height: 30px;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+}
+
+/* BMI Label positioning */
+.bmi-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    position: relative;
+}
+
+.bmi-label {
+    position: absolute;
+    transform: translateX(-50%);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Input area styling */
+.input-area {
+    margin-top: 40px;
+}
+
+.input-area label {
+    margin-right: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.input-area input {
+    padding: 5px;
+    font-size: 14px;
+    margin-right: 20px;
+}
+
+.input-area button {
+    padding: 5px 15px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input-area button:hover {
+    background-color: #1976D2;
+}
+
+/* BMI result styling */
+.bmi-result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Instructions section */
+.instructions {
+    margin-top: 30px;
+    font-size: 14px;
+    color: gray;
+    font-style: italic;
+}

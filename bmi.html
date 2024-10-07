@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI계산기 - 모둠도구 | 간단하게 모아 쓰는 도구들</title>
+    <link rel="stylesheet" href="bmi.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Title Area -->
+        <h1 class="title">BMI계산기</h1>
+
+        <!-- BMI Calculation Area -->
+        <div class="bmi-calculation">
+            <div class="bmi-bar-container">
+                <div class="bmi-bar">
+                    <div id="bmiIndicator"></div>
+                </div>
+                <div class="bmi-labels">
+                    <span class="bmi-label" style="left: 0%;">18.5</span>
+                    <span class="bmi-label" style="left: 18.5%;">23</span>
+                    <span class="bmi-label" style="left: 43%;">25</span>
+                    <span class="bmi-label" style="left: 57%;">30</span>
+                </div>
+            </div>
+
+            <div class="input-area">
+                <label for="height">키 (cm):</label>
+                <input type="number" id="height" name="height" placeholder="Enter height">
+                <label for="weight">몸무게 (kg):</label>
+                <input type="number" id="weight" name="weight" placeholder="Enter weight">
+                <button onclick="calculateBMI()">계산하기</button>
+            </div>
+        </div>
+
+        <!-- BMI Result Display -->
+        <div id="bmiResult" class="bmi-result"></div>
+
+        <!-- Instructions Area -->
+        <div class="instructions">
+            <p>참고: 이 계산 결과는 100% 정확하지 않을 수 있으므로 일반적인 참고 자료로만 사용해야 합니다.</p>
+        </div>
+    </div>
+
+    <script>
+        function calculateBMI() {
+            const height = parseFloat(document.getElementById('height').value);
+            const weight = parseFloat(document.getElementById('weight').value);
+            if (isNaN(height) || isNaN(weight)) {
+                document.getElementById('bmiResult').textContent = "키와 몸무게를 모두 입력해 주세요.";
+                return;
+            }
+
+            const bmi = (weight / ((height / 100) ** 2)).toFixed(2);
+            let resultMessage = `BMI 지수는 ${bmi}이며, `;
+
+            if (bmi < 18.5) {
+                resultMessage += "저체중입니다.";
+            } else if (bmi >= 18.5 && bmi < 23) {
+                resultMessage += "정상입니다.";
+            } else if (bmi >= 23 && bmi < 25) {
+                resultMessage += "과체중입니다.";
+            } else {
+                resultMessage += "비만입니다.";
+            }
+
+            document.getElementById('bmiResult').textContent = resultMessage;
+
+            // Update the BMI visual indicator with more precise ranges
+            const bmiIndicator = document.getElementById('bmiIndicator');
+            const graphWidth = document.querySelector('.bmi-bar').offsetWidth;
+
+            // Calculate exact position of BMI on the graph based on the new ranges
+            let indicatorPosition = 0;
+            if (bmi < 18.5) {
+                indicatorPosition = (bmi / 18.5) * (graphWidth * 0.185);
+            } else if (bmi >= 18.5 && bmi < 23) {
+                indicatorPosition = ((bmi - 18.5) / (23 - 18.5)) * (graphWidth * 0.245) + (graphWidth * 0.185);
+            } else if (bmi >= 23 && bmi < 25) {
+                indicatorPosition = ((bmi - 23) / (25 - 23)) * (graphWidth * 0.14) + (graphWidth * 0.429);
+            } else {
+                indicatorPosition = ((bmi - 25) / (40 - 25)) * (graphWidth * 0.43) + (graphWidth * 0.57);
+            }
+
+            // Set the position of the BMI indicator
+            bmiIndicator.style.left = `${indicatorPosition}px`;
+        }
+    </script>
+</body>
+</html>
