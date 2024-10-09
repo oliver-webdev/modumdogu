@@ -92,6 +92,30 @@ body {
     background-color: #1976D2;
 }
 
+/* Responsive layout for mobile screens */
+@media (max-width: 836px) {
+    .input-area {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .input-area label, .input-area input {
+        width: 100%;
+        max-width: 300px; /* Restrict the width on larger screens */
+        margin-bottom: 15px; /* Add space between inputs */
+    }
+
+    .input-area input {
+        margin-right: 0; /* Remove right margin on mobile */
+    }
+
+    .input-area button {
+        width: 100%;
+        max-width: 200px; /* Keep the button within a reasonable size */
+    }
+}
+
 /* BMI result styling */
 .bmi-result {
     margin-top: 20px;
