@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>심플한 디데이 계산기 - 모둠도구 | 간단하게 모아 쓰는 도구들</title>
+    <link rel="stylesheet" href="d-day.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">디데이 계산기</h1>
+        <div class="input-section">
+            <label for="date-input">계산하고 싶은 미래 시점의 날짜를 선택해주세요!</label>
+            <input type="date" id="date-input">
+            <button id="calculate-btn">계산하기</button>
+        </div>
+        <div id="result-section">
+            <p id="result-message"></p>
+            <p id="dynamic-countdown"></p>
+        </div>
+    </div>
+
+    <script src="d-day.js"></script>
+</body>
+</html>
